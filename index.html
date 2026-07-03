@@ -589,7 +589,30 @@ section { padding: clamp(4.5rem, 9vw, 8rem) 0; position: relative; }
 }
 @media (max-width: 520px) { .about-feats { grid-template-columns: 1fr; } }
 .about-visual { position: relative; }
-.about-visual img { border-radius: var(--radius); box-shadow: 0 30px 60px -30px rgba(10,20,36,.45); }
+.about-brand {
+  position: relative; overflow: hidden;
+  border-radius: var(--radius);
+  padding: clamp(2.5rem, 6vw, 4rem) 2rem;
+  display: flex; flex-direction: column; align-items: center; gap: 1.4rem; text-align: center;
+  background:
+    radial-gradient(80% 70% at 50% 30%, rgba(30,74,142,.75), transparent 72%),
+    linear-gradient(160deg, #15315B 0%, #0C1B33 60%, #0A1424 100%);
+  border: 1px solid rgba(85,160,255,.16);
+  box-shadow: 0 30px 60px -30px rgba(10,20,36,.45);
+}
+.about-brand::before {
+  content: ""; position: absolute; inset: 0; z-index: 0;
+  background-image: radial-gradient(rgba(120,170,255,.12) 1px, transparent 1.4px);
+  background-size: 22px 22px;
+  -webkit-mask-image: radial-gradient(70% 60% at 50% 35%, #000, transparent 76%);
+          mask-image: radial-gradient(70% 60% at 50% 35%, #000, transparent 76%);
+}
+.about-brand img { position: relative; z-index: 1; width: min(78%, 320px); height: auto; }
+.about-brand-tag {
+  position: relative; z-index: 1;
+  font-size: .82rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--accent-hi); max-width: 28ch;
+}
 .about-badge {
   position: absolute; left: -1rem; bottom: -1.4rem;
   background: var(--navy-900); color: var(--paper);
@@ -775,6 +798,19 @@ html.js .reveal.in { opacity: 1; transform: none; }
 #conteudo .cases-cta a, #conteudo .case-kicker { color: var(--accent-hi) !important; }
 #conteudo .light .sol-link { color: var(--accent) !important; }
 .site-footer .footer-col a, .site-footer .footer-brand p, .site-footer address { color: var(--cream) !important; }
+
+/* Formas: impede o tema de arredondar/ovalar imagens e containers.
+   (o tema estava transformando as miniaturas dos depoimentos em elipses) */
+#conteudo .yt-facade, #conteudo .pf-card, #conteudo .pf-shot,
+#conteudo .review-card, #conteudo .sol-card, #conteudo .local-card,
+#conteudo .local-map { border-radius: var(--radius) !important; }
+#conteudo .hero-media, #conteudo .about-brand { border-radius: 26px !important; }
+#conteudo .yt-facade img, #conteudo .pf-shot img,
+#conteudo .about-brand img, #conteudo .hero-media img { border-radius: 0 !important; }
+/* preserva os elementos que SÃO circulares de propósito */
+#conteudo .play-badge > span, #conteudo .faq-icon,
+.site-footer .footer-social a { border-radius: 50% !important; }
+#conteudo .local-ic { border-radius: 12px !important; }
 </style>
 </head>
 <body>
@@ -1129,7 +1165,10 @@ html.js .reveal.in { opacity: 1; transform: none; }
         </ul>
       </div>
       <div class="about-visual reveal" style="--d:.12s">
-        <img src="https://visao.marketing/wp-content/uploads/2024/04/Design-sem-nome-1.png" alt="Visão Marketing, agência de marketing digital em Valparaíso de Goiás especializada em tráfego pago e criação de sites" width="1029" height="565" loading="lazy" decoding="async">
+        <div class="about-brand">
+          <img src="https://visao.marketing/wp-content/uploads/2024/04/logo-branca-visaomarketing-1024x448.png" alt="Logo da Visão Marketing, agência de marketing digital em Valparaíso de Goiás" width="1024" height="448" loading="lazy" decoding="async">
+          <p class="about-brand-tag">Agência de Marketing Digital em Valparaíso de Goiás</p>
+        </div>
         <div class="about-badge">
           <strong>Desde 2019</strong>
           <span>Tráfego pago que gera resultado</span>
