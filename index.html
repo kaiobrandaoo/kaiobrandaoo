@@ -341,8 +341,26 @@ section { padding: clamp(4.5rem, 9vw, 8rem) 0; position: relative; }
   .hero-media { max-width: 520px; justify-self: end; }
 }
 @media (max-width: 899px) {
-  .hero-media { order: -1; aspect-ratio: 5 / 4; max-width: 400px; margin: 0 auto .25rem; }
-  .hero-media img { width: 100%; }
+  .hero { position: relative; overflow: hidden; }
+  .hero-grid { display: block; }
+  .hero-copy { position: relative; z-index: 2; }
+  /* foto como elemento de fundo no canto direito, atrás do texto */
+  .hero-media {
+    position: absolute; z-index: 0; top: 1%; right: -14%;
+    width: 78%; max-width: 380px; aspect-ratio: auto;
+    margin: 0; padding: 0; border: 0; border-radius: 0;
+    background: none; box-shadow: none; overflow: visible;
+    pointer-events: none;
+    -webkit-mask-image: linear-gradient(to left, #000 42%, transparent 90%);
+            mask-image: linear-gradient(to left, #000 42%, transparent 90%);
+  }
+  .hero-media::before, .hero-media::after { display: none; }
+  .hero-media img {
+    position: static; transform: scaleX(-1);
+    width: 100%; max-width: none; height: auto;
+    opacity: .5; filter: none;
+  }
+  .hero h1 { text-shadow: 0 2px 22px rgba(6,13,24,.55); }
 }
 
 .hero-stats {
@@ -780,6 +798,8 @@ html.js .reveal.in { opacity: 1; transform: none; }
 #conteudo .sol-featured p, #conteudo .sol-featured li { color: var(--cream) !important; }
 
 /* Links e botões (o tema costuma recolorir todo <a>) */
+.site-header .menu-btn { background: none !important; box-shadow: none !important; border-radius: 0 !important; }
+.site-header .menu-btn span { background: var(--cream) !important; }
 .site-header .nav-links a { color: var(--cream) !important; }
 .site-header .nav-links a.btn-primary, #conteudo a.btn-primary { color: #fff !important; }
 .cta-final a.btn { color: var(--navy-950) !important; }
