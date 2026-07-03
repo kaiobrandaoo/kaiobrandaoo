@@ -1013,22 +1013,12 @@ html.js .reveal.in { opacity: 1; transform: none; }
 
       <!-- ============================================================
            AVALIAÇÕES DO GOOGLE VIA TRUSTINDEX
-           Cole AQUI DENTRO o código de incorporação do Trustindex.
-           No painel do Trustindex, escolha a opção de código
-           HTML / JavaScript (NÃO o shortcode [trustindex...], que só
-           funciona dentro do WordPress). É algo como:
-             <div class="trustindex-widget" data-widget-id="XXXX"></div>
-             <script defer async src="https://cdn.trustindex.io/loader.js"></script>
-           Basta substituir o bloco .trustindex-slot abaixo por esse código.
+           O shortcode abaixo só é processado se esta página passar pelo
+           WordPress com o plugin Trustindex ativo. Se aparecer o texto
+           literal "[trustindex...]", troque pelo código de incorporação
+           HTML/JavaScript do Trustindex (funciona em qualquer cenário).
            ============================================================ -->
-      <div class="trustindex-slot reveal" id="trustindex">
-        <!-- COLE O CÓDIGO DO TRUSTINDEX AQUI -->
-        <div class="trustindex-placeholder">
-          <span class="g-mark" aria-hidden="true">G</span>
-          <strong>Avaliações reais do Google — 5.0</strong>
-          <span>As avaliações verificadas do Google aparecem aqui assim que o widget do Trustindex for inserido.</span>
-        </div>
-      </div>
+      <div class="trustindex-slot reveal" id="trustindex">[trustindex no-registration=google]</div>
     </div>
   </section>
 
