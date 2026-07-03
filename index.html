@@ -68,42 +68,6 @@
   "areaServed": [
     { "@type": "City", "name": "Valparaíso de Goiás" },
     { "@type": "AdministrativeArea", "name": "Entorno do Distrito Federal" }
-  ],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "bestRating": "5",
-    "reviewCount": "9"
-  },
-  "review": [
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "diogo nogueira" },
-      "datePublished": "2025-03-17",
-      "reviewBody": "Estamos muito satisfeitos com a gestão de tráfego! Graças a essa estratégia, conseguimos gerar leads qualificados para o nosso time comercial, o que tem impactado diretamente nos nossos resultados.",
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
-    },
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Gabriel Henrique" },
-      "datePublished": "2025-03-17",
-      "reviewBody": "Quero agradecer demais à Visão Marketing pelo trabalho incrível! O resultado ficou muito profissional e exatamente como queríamos. Recomendo demais para quem precisa de um site top!",
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
-    },
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Carlos Antônio Oliveira Santos" },
-      "datePublished": "2025-03-14",
-      "reviewBody": "Equipe top! A Visão Marketing cuida de toda a gestão dos nossos anúncios no Google Ads e Facebook Ads, sempre com muita atenção e estratégia. Parceiros de confiança!",
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
-    },
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Gabriela Miolo" },
-      "datePublished": "2024-04-29",
-      "reviewBody": "Ótimo atendimento do Kaio, o profissionalismo e atenção desde a criação do site e com as alterações. Super recomendo.",
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
-    }
   ]
 }
 </script>
@@ -538,6 +502,16 @@ section { padding: clamp(4.5rem, 9vw, 8rem) 0; position: relative; }
 .review-meta { margin-top: auto; padding-top: .5rem; border-top: 1px solid var(--line-light); }
 .review-meta strong { display: block; color: var(--ink); font-size: .95rem; }
 .review-meta time { font-size: .82rem; color: var(--ink-soft); }
+
+/* slot do widget de avaliações (Trustindex) */
+.trustindex-slot { min-height: 110px; }
+.trustindex-placeholder {
+  display: flex; flex-direction: column; align-items: center; gap: .6rem; text-align: center;
+  background: var(--surface); border: 1px dashed var(--line-light); border-radius: var(--radius);
+  padding: 2.6rem 1.5rem; color: var(--ink-soft); max-width: 620px; margin: 0 auto;
+}
+.trustindex-placeholder .g-mark { font-size: 1.7rem; }
+.trustindex-placeholder strong { color: var(--ink); font-size: 1.08rem; }
 
 /* ============ PORTFÓLIO ============ */
 .portfolio-grid { display: grid; gap: 1.5rem; }
@@ -1037,39 +1011,23 @@ html.js .reveal.in { opacity: 1; transform: none; }
         <h2>O que os clientes escrevem <em>sem a gente pedir</em></h2>
       </header>
 
-      <p class="reviews-badge reveal"><span class="g-mark" aria-hidden="true">G</span> Avaliações reais do Google <span class="stars" aria-label="Nota 5 de 5">★★★★★</span> 5.0</p>
-
-      <div class="reviews-grid">
-        <article class="review-card reveal">
-          <p class="stars" aria-label="5 estrelas">★★★★★</p>
-          <blockquote>"Estamos muito satisfeitos com a gestão de tráfego! Graças a essa estratégia, conseguimos gerar leads qualificados para o nosso time comercial, o que tem impactado diretamente nos nossos resultados."</blockquote>
-          <footer class="review-meta"><strong>diogo nogueira</strong><time datetime="2025-03-17">17 de março de 2025</time></footer>
-        </article>
-        <article class="review-card reveal" style="--d:.06s">
-          <p class="stars" aria-label="5 estrelas">★★★★★</p>
-          <blockquote>"Quero agradecer demais à Visão Marketing pelo trabalho incrível! O resultado ficou muito profissional e exatamente como queríamos. Recomendo demais para quem precisa de um site top!"</blockquote>
-          <footer class="review-meta"><strong>Gabriel Henrique</strong><time datetime="2025-03-17">17 de março de 2025</time></footer>
-        </article>
-        <article class="review-card reveal" style="--d:.12s">
-          <p class="stars" aria-label="5 estrelas">★★★★★</p>
-          <blockquote>"Agradeço à equipe Visão Marketing e à Camila pelo excelente trabalho nas minhas redes sociais!"</blockquote>
-          <footer class="review-meta"><strong>Elenice Ferreira</strong><time datetime="2025-03-14">14 de março de 2025</time></footer>
-        </article>
-        <article class="review-card reveal">
-          <p class="stars" aria-label="5 estrelas">★★★★★</p>
-          <blockquote>"Equipe top! A Visão Marketing cuida de toda a gestão dos nossos anúncios no Google Ads e Facebook Ads, sempre com muita atenção e estratégia. Parceiros de confiança!"</blockquote>
-          <footer class="review-meta"><strong>Carlos Antônio Oliveira Santos</strong><time datetime="2025-03-14">14 de março de 2025</time></footer>
-        </article>
-        <article class="review-card reveal" style="--d:.06s">
-          <p class="stars" aria-label="5 estrelas">★★★★★</p>
-          <blockquote>"Ótimo atendimento do Kaio, o profissionalismo e atenção desde a criação do site e com as alterações. Super recomendo."</blockquote>
-          <footer class="review-meta"><strong>Gabriela Miolo</strong><time datetime="2024-04-29">29 de abril de 2024</time></footer>
-        </article>
-        <article class="review-card reveal" style="--d:.12s">
-          <p class="stars" aria-label="5 estrelas">★★★★★</p>
-          <blockquote>"Excelente prestação de serviço, site de qualidade e muito bem elaborado, designer de primeira. Recomendo!"</blockquote>
-          <footer class="review-meta"><strong>Pedro Grimais</strong><time datetime="2024-03-27">27 de março de 2024</time></footer>
-        </article>
+      <!-- ============================================================
+           AVALIAÇÕES DO GOOGLE VIA TRUSTINDEX
+           Cole AQUI DENTRO o código de incorporação do Trustindex.
+           No painel do Trustindex, escolha a opção de código
+           HTML / JavaScript (NÃO o shortcode [trustindex...], que só
+           funciona dentro do WordPress). É algo como:
+             <div class="trustindex-widget" data-widget-id="XXXX"></div>
+             <script defer async src="https://cdn.trustindex.io/loader.js"></script>
+           Basta substituir o bloco .trustindex-slot abaixo por esse código.
+           ============================================================ -->
+      <div class="trustindex-slot reveal" id="trustindex">
+        <!-- COLE O CÓDIGO DO TRUSTINDEX AQUI -->
+        <div class="trustindex-placeholder">
+          <span class="g-mark" aria-hidden="true">G</span>
+          <strong>Avaliações reais do Google — 5.0</strong>
+          <span>As avaliações verificadas do Google aparecem aqui assim que o widget do Trustindex for inserido.</span>
+        </div>
       </div>
     </div>
   </section>
