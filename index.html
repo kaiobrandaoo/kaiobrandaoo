@@ -329,14 +329,37 @@ section { padding: clamp(4.5rem, 9vw, 8rem) 0; position: relative; }
     radial-gradient(700px 600px at -10% 110%, rgba(19,35,60,.9), transparent 60%),
     var(--navy-900);
 }
+.hero-grid { display: grid; gap: 2rem; align-items: center; }
 .hero h1 {
   font-size: clamp(2.5rem, 6.8vw, 5.3rem);
   margin: 1.4rem 0 1.6rem;
-  max-width: 24ch;
+  max-width: 18ch;
 }
-.hero-sub { font-size: clamp(1.05rem, 1.6vw, 1.25rem); max-width: 64ch; color: var(--cream); }
+.hero-sub { font-size: clamp(1.05rem, 1.6vw, 1.25rem); max-width: 56ch; color: var(--cream); }
 .hero-sub strong { color: #fff; font-weight: 600; }
 .hero-ctas { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2.4rem; }
+
+.hero-media { position: relative; margin: 0; justify-self: center; }
+.hero-media::before {
+  content: ""; position: absolute; inset: 8% 6% 6% 6%; z-index: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 45%, rgba(85,160,255,.55), rgba(23,99,219,.28) 45%, transparent 70%);
+  filter: blur(14px);
+}
+.hero-media img {
+  position: relative; z-index: 1; width: 100%; max-width: 460px; height: auto;
+  filter: drop-shadow(0 26px 50px rgba(6,13,24,.5));
+}
+@media (min-width: 900px) {
+  .hero-grid { grid-template-columns: 1.15fr .85fr; gap: 3rem; }
+  .hero-media img { max-width: 100%; }
+}
+@media (max-width: 899px) {
+  .hero-media { max-width: 360px; margin-top: 1rem; }
+}
+@media (max-width: 560px) {
+  .hero-media { max-width: 280px; }
+}
 
 .hero-stats {
   margin-top: clamp(3.5rem, 7vw, 5.5rem);
@@ -595,6 +618,39 @@ section { padding: clamp(4.5rem, 9vw, 8rem) 0; position: relative; }
 .cta-final .btn:hover { background: var(--paper); }
 .cta-local { margin-top: 1.6rem; font-size: .9rem; font-weight: 600; text-transform: uppercase; letter-spacing: .14em; }
 
+/* ============ LOCALIZAÇÃO ============ */
+#localizacao { background: var(--navy-850); }
+.local-grid { display: grid; gap: 1.5rem; }
+@media (min-width: 900px) { .local-grid { grid-template-columns: .9fr 1.1fr; align-items: stretch; } }
+.local-info { display: grid; gap: 1.5rem; align-content: start; }
+.local-card {
+  background: var(--navy-900); border: 1px solid var(--line-dark); border-radius: var(--radius);
+  padding: 1.8rem 1.8rem 2rem; display: flex; flex-direction: column; gap: .6rem;
+}
+.local-ic {
+  width: 46px; height: 46px; border-radius: 12px; margin-bottom: .4rem;
+  display: grid; place-items: center; color: var(--accent-hi);
+  background: rgba(85,160,255,.12); border: 1px solid rgba(85,160,255,.25);
+}
+.local-ic svg { width: 22px; height: 22px; }
+.local-card h3 { font-size: 1.4rem; color: #fff; }
+.local-card address { font-style: normal; color: var(--cream); line-height: 1.7; }
+.local-hours { color: var(--cream); line-height: 1.7; }
+.local-hours strong { color: #fff; font-size: 1.15rem; }
+.local-link {
+  margin-top: auto; padding-top: 1rem;
+  display: inline-flex; align-items: center; gap: .5rem;
+  font-weight: 600; color: var(--accent-hi); text-decoration: none; font-size: .95rem;
+}
+.local-link svg { transition: transform .3s; }
+.local-link:hover svg { transform: translate(3px, -1px); }
+.local-map {
+  border-radius: var(--radius); overflow: hidden;
+  border: 1px solid var(--line-dark); min-height: 360px;
+  background: var(--navy-900);
+}
+.local-map iframe { display: block; width: 100%; height: 100%; min-height: 360px; filter: saturate(1.05); }
+
 /* ============ FOOTER ============ */
 .site-footer { background: var(--navy-950); padding: clamp(3.5rem, 7vw, 5.5rem) 0 0; font-size: .95rem; }
 .footer-grid { display: grid; gap: 2.6rem; padding-bottom: 3rem; }
@@ -684,15 +740,22 @@ html.js .reveal.in { opacity: 1; transform: none; }
   <!-- ================= HERO ================= -->
   <section class="hero" aria-label="Apresentação">
     <div class="wrap">
-      <p class="eyebrow reveal">Valparaíso de Goiás — GO · Entorno de Brasília</p>
-      <h1 class="reveal" style="--d:.08s">Agência de Marketing Digital em Valparaíso de Goiás <em>para vender todos os dias.</em></h1>
-      <p class="hero-sub reveal" style="--d:.16s">Gestão de <strong>tráfego pago</strong> no Google Ads e Meta Ads, <strong>criação de sites profissionais</strong> e <strong>SEO</strong> de alta performance. Sem promessa vazia: estratégia, execução e relatório do que cada real investido trouxe de volta.</p>
-      <div class="hero-ctas reveal" style="--d:.24s">
-        <a class="btn btn-primary magnetic" href="https://wa.me/5561995297132?text=Olá, acabei de visitar o site e gostaria de solicitar um orçamento.">
-          Pedir orçamento no WhatsApp
-          <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6 3l5 5-5 5V3z"/></svg>
-        </a>
-        <a class="btn btn-ghost magnetic" href="#resultados">Ver resultados reais</a>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow reveal">Valparaíso de Goiás — GO · Entorno de Brasília</p>
+          <h1 class="reveal" style="--d:.08s">Agência de Marketing Digital em Valparaíso de Goiás <em>para vender todos os dias.</em></h1>
+          <p class="hero-sub reveal" style="--d:.16s">Gestão de <strong>tráfego pago</strong> no Google Ads e Meta Ads, <strong>criação de sites profissionais</strong> e <strong>SEO</strong> de alta performance. Sem promessa vazia: estratégia, execução e relatório do que cada real investido trouxe de volta.</p>
+          <div class="hero-ctas reveal" style="--d:.24s">
+            <a class="btn btn-primary magnetic" href="https://wa.me/5561995297132?text=Olá, acabei de visitar o site e gostaria de solicitar um orçamento.">
+              Pedir orçamento no WhatsApp
+              <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6 3l5 5-5 5V3z"/></svg>
+            </a>
+            <a class="btn btn-ghost magnetic" href="#resultados">Ver resultados reais</a>
+          </div>
+        </div>
+        <figure class="hero-media reveal" style="--d:.2s">
+          <img src="https://visao.marketing/wp-content/uploads/2024/04/Design-sem-nome-3.png" alt="Kaio Brandão, especialista em tráfego pago e fundador da Visão Marketing em Valparaíso de Goiás" width="720" height="650" fetchpriority="high" decoding="async">
+        </figure>
       </div>
 
       <div class="hero-stats reveal" style="--d:.32s">
@@ -1092,6 +1155,51 @@ html.js .reveal.in { opacity: 1; transform: none; }
         </a>
       </div>
       <p class="cta-local reveal" style="--d:.3s">Atendimento local em Valparaíso de Goiás e todo o Entorno de Brasília</p>
+    </div>
+  </section>
+
+  <!-- ================= LOCALIZAÇÃO ================= -->
+  <section id="localizacao" aria-label="Localização e horário de funcionamento">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="eyebrow">07 — Onde estamos</p>
+        <h2>Agência local em Valparaíso de Goiás, <em>de porta aberta</em></h2>
+        <p>Perto de você, no Jardim Céu Azul. Venha tomar um café ou chame no WhatsApp — o atendimento é o mesmo.</p>
+      </header>
+
+      <div class="local-grid">
+        <div class="local-info">
+          <article class="local-card reveal">
+            <span class="local-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            </span>
+            <h3>Localização</h3>
+            <address>Rua 61, Quadra 83, Lote 27B, Sala 3<br>Jardim Céu Azul, Valparaíso de Goiás - GO<br>CEP 72871-061</address>
+            <a class="local-link" href="https://www.google.com/maps/search/?api=1&query=Ag%C3%AAncia%20Vis%C3%A3o%20Marketing%2C%20Rua%2061%2C%20Quadra%2083%2C%20Valpara%C3%ADso%20de%20Goi%C3%A1s" target="_blank" rel="noopener">
+              Abrir no Google Maps
+              <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 11L11 3M5 3h6v6" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </article>
+          <article class="local-card reveal" style="--d:.1s">
+            <span class="local-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <h3>Horário de funcionamento</h3>
+            <p class="local-hours">Segunda a Sábado<br><strong>9h às 18h30</strong></p>
+            <a class="local-link" href="https://wa.me/5561995297132?text=Olá, acabei de visitar o site e gostaria de solicitar um orçamento.">
+              Falar agora no WhatsApp
+              <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 7h9M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </article>
+        </div>
+
+        <div class="local-map reveal" style="--d:.15s">
+          <iframe
+            title="Mapa da Visão Marketing em Valparaíso de Goiás"
+            src="https://maps.google.com/maps?q=Ag%C3%AAncia%20Vis%C3%A3o%20Marketing%2C%20Rua%2061%2C%20Quadra%2083%2C%20Jardim%20C%C3%A9u%20Azul%2C%20Valpara%C3%ADso%20de%20Goi%C3%A1s%20-%20GO&z=15&output=embed"
+            width="600" height="450" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+      </div>
     </div>
   </section>
 
