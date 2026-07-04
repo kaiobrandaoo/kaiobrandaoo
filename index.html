@@ -479,9 +479,18 @@ section { padding: clamp(4.5rem, 9vw, 8rem) 0; position: relative; }
 .case-feature-body p { color: var(--cream); margin-bottom: .85rem; max-width: 58ch; }
 .case-feature-body p:last-child { margin-bottom: 0; }
 .case-feature-body p strong { color: #fff; }
+.case-feature-cta {
+  display: inline-flex; align-items: center; gap: .5rem; margin-top: 1.2rem;
+  font-weight: 600; color: var(--accent-hi); text-decoration: none; font-size: .98rem;
+}
+.case-feature-cta svg { transition: transform .3s; }
+.case-feature-cta:hover svg { transform: translateX(4px); }
 @media (min-width: 860px) {
   .case-feature { grid-template-columns: .72fr 1.28fr; gap: 3rem; margin-bottom: 4.5rem; }
   .case-feature .yt-facade { max-width: 300px; }
+  .case-feature.reverse { grid-template-columns: 1.28fr .72fr; }
+  .case-feature.reverse .yt-facade { order: 2; }
+  .case-feature.reverse .case-feature-body { order: 1; }
 }
 
 .cases-grid { display: grid; gap: 2.6rem 1.6rem; }
@@ -860,7 +869,7 @@ html.js .reveal.in { opacity: 1; transform: none; }
 #conteudo .btn-ghost { color: var(--cream) !important; }
 #conteudo .light .btn-ghost { color: var(--ink) !important; }
 #conteudo .sol-link, #conteudo .local-link, #conteudo .pf-domain,
-#conteudo .cases-cta a, #conteudo .case-kicker { color: var(--accent-hi) !important; }
+#conteudo .cases-cta a, #conteudo .case-kicker, #conteudo .case-feature-cta { color: var(--accent-hi) !important; }
 #conteudo .light .sol-link { color: var(--accent) !important; }
 .site-footer .footer-col a, .site-footer .footer-brand p, .site-footer address { color: var(--cream) !important; }
 
@@ -1049,6 +1058,24 @@ html.js .reveal.in { opacity: 1; transform: none; }
           <p>Toda clínica de estética vive a mesma angústia: depender de indicação e torcer pra agenda encher. A Dra. Eduarda queria atender pacientes novos todos os dias, mas sozinha isso era quase impossível de sustentar.</p>
           <p>Ela decidiu contratar um gestor de tráfego pago para clínica de estética — e o cenário mudou por completo. Hoje chegam pacientes qualificados todos os dias, gente que realmente quer marcar. O volume de mensagens ficou tão grande que até a recepção sentiu a diferença.</p>
           <p>Mais atendimentos, mais faturamento e uma agenda que deixou de ser sorte e virou previsível. Não é promessa nossa: é a Dra. Eduarda quem conta. <strong>Dá o play e escuta dela.</strong></p>
+        </div>
+      </article>
+
+      <article class="case-feature reverse reveal">
+        <button class="yt-facade" type="button" data-video="SOa6rkC5YI8" data-title="Depoimento em vídeo do Dr. Josué Brandão sobre tráfego pago para clínica de estética" aria-label="Assistir depoimento em vídeo do Dr. Josué Brandão">
+          <img src="https://visao.marketing/wp-content/uploads/2026/07/Trafego-Pago-para-Clinica-de-Estetica-o-depoimento-do-Dr.-Josue-Brandao.png" alt="Depoimento em vídeo do Dr. Josué Brandão: tráfego pago para clínica de estética e harmonização" width="1080" height="1920" loading="lazy" decoding="async">
+          <span class="play-badge"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
+        </button>
+        <div class="case-feature-body">
+          <p class="case-kicker">Tráfego pago para clínica de estética</p>
+          <h3>Clínica de Estética Dr. Josué</h3>
+          <p>"É algo que eu não abro mão." Foi assim que o Dr. Josué Brandão, especialista em harmonização facial e íntima, resumiu o que o tráfego pago representa hoje na clínica dele.</p>
+          <p>O desafio era específico: a harmonização íntima não roda no boca a boca — o paciente faz o procedimento e não sai comentando por aí. Sem indicação, captar gente nova ficava difícil.</p>
+          <p>Depois de quase um ano com a Visão Marketing, o cenário virou: hoje chegam pacientes qualificados do Instagram, do Google e do Facebook, muitos que nem sabiam que o procedimento existia — com a estrutura de confiança que um nicho sensível exige. <strong>Dá o play e escuta do próprio Dr. Josué.</strong></p>
+          <a class="case-feature-cta" href="https://wa.me/5561992169812?text=Olá, acabei de visitar o site e gostaria de solicitar um orçamento.">
+            Atrair pacientes qualificados para a minha clínica
+            <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h10M8 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
         </div>
       </article>
 
