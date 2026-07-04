@@ -208,6 +208,11 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.
 .sec-head em, h1 em, .cta-final h2 em { font-style: normal; color: var(--accent-hi); }
 
 section { padding: clamp(4.5rem, 9vw, 8rem) 0; position: relative; }
+@media (max-width: 640px) {
+  section { padding: 2.75rem 0; }
+  .sec-head { margin-bottom: 1.7rem; }
+  .sec-head h2 { margin: .8rem 0 .8rem; }
+}
 
 /* seções claras */
 .light { background: var(--paper); color: var(--ink); }
@@ -445,6 +450,7 @@ section { padding: clamp(4.5rem, 9vw, 8rem) 0; position: relative; }
   color: #fff; background: var(--accent); padding: .35rem .7rem; border-radius: 999px;
 }
 .sol-featured-inner { display: grid; gap: 1.5rem; }
+.sol-featured-inner > div { display: flex; flex-direction: column; gap: .55rem; }
 .sol-featured ul { display: grid; gap: .6rem; }
 .sol-featured li { display: flex; gap: .7rem; align-items: flex-start; color: var(--cream); font-size: .98rem; }
 .sol-featured li::before {
