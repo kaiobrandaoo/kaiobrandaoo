@@ -732,6 +732,16 @@ section { padding: clamp(4.5rem, 9vw, 8rem) 0; position: relative; }
   justify-content: space-between; color: var(--cream-dim); font-size: .85rem;
 }
 
+/* footer centralizado no mobile */
+@media (max-width: 859px) {
+  .footer-grid { text-align: center; justify-items: center; }
+  .footer-brand { display: flex; flex-direction: column; align-items: center; }
+  .footer-brand p { max-width: 34ch; }
+  .footer-social { justify-content: center; }
+  .footer-col address { text-align: center; }
+  .footer-bottom { justify-content: center; text-align: center; gap: .4rem; }
+}
+
 /* ============ WHATSAPP FLUTUANTE ============ */
 .wa-float {
   position: fixed; right: 1.3rem; bottom: 1.3rem; z-index: 95;
