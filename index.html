@@ -687,7 +687,17 @@ section { padding: clamp(4.5rem, 9vw, 8rem) 0; position: relative; }
 .cta-final p { max-width: 60ch; font-size: 1.12rem; font-weight: 500; margin-bottom: 2.2rem; color: rgba(255,255,255,.9); }
 .cta-final .btn { background: #fff; color: var(--navy-950); }
 .cta-final .btn:hover { background: var(--paper); }
-.cta-local { margin-top: 1.6rem; font-size: .9rem; font-weight: 600; text-transform: uppercase; letter-spacing: .14em; }
+.cta-local {
+  margin-top: 1.8rem;
+  display: inline-flex; align-items: center; gap: .55rem;
+  font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em;
+  color: #fff; line-height: 1.35;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.24);
+  padding: .55rem 1rem; border-radius: 14px;
+}
+.cta-local svg { width: 16px; height: 16px; flex: none; }
+@media (max-width: 560px) { .cta-local { font-size: .66rem; } }
 
 /* ============ LOCALIZAÇÃO ============ */
 #localizacao { background: var(--navy-850); }
@@ -1276,7 +1286,10 @@ html.js .reveal.in { opacity: 1; transform: none; }
             <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h10M8 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
-        <p class="cta-local reveal" style="--d:.3s">Atendimento local em Valparaíso de Goiás e todo o Entorno de Brasília</p>
+        <p class="cta-local reveal" style="--d:.3s">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          Atendimento local em Valparaíso de Goiás e todo o Entorno de Brasília
+        </p>
       </div>
       <figure class="cta-final-media reveal" style="--d:.2s" aria-hidden="true">
         <img src="https://visao.marketing/wp-content/uploads/2026/07/kaio-transparente-3.png" alt="" width="1080" height="1080" loading="lazy" decoding="async">
