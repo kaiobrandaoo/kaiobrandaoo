@@ -201,6 +201,10 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.
   color: var(--accent-hi);
 }
 .eyebrow::before { content: ""; width: 2.2rem; height: 1px; background: var(--accent); flex: none; }
+@media (max-width: 560px) {
+  .hero .eyebrow { font-size: .6rem; letter-spacing: .1em; gap: .5rem; white-space: nowrap; }
+  .hero .eyebrow::before { width: 1.3rem; }
+}
 
 .sec-head { max-width: 860px; margin-bottom: clamp(2.5rem, 6vw, 4.5rem); }
 .sec-head h2 { font-size: clamp(2rem, 4.6vw, 3.4rem); margin: 1.1rem 0 1rem; }
