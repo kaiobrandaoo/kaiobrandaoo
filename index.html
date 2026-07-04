@@ -341,7 +341,11 @@ section { padding: clamp(4.5rem, 9vw, 8rem) 0; position: relative; }
   .hero-media { max-width: 520px; justify-self: end; }
 }
 @media (max-width: 899px) {
-  .hero { position: relative; overflow: hidden; }
+  .hero {
+    position: relative; overflow: hidden;
+    min-height: auto; justify-content: flex-start;
+    padding: calc(var(--nav-h) + 1rem) 0 2.5rem;
+  }
   .hero-grid { display: block; }
   .hero-copy { position: relative; z-index: 2; }
   /* foto como elemento de fundo no canto direito, atrás do texto */
@@ -632,6 +636,11 @@ section { padding: clamp(4.5rem, 9vw, 8rem) 0; position: relative; }
 .faq-a > div { overflow: hidden; }
 .faq-a p { padding: 0 3.5rem 1.6rem .2rem; color: var(--cream); max-width: 66ch; }
 .faq-item.open .faq-a { grid-template-rows: 1fr; }
+@media (max-width: 640px) {
+  .faq-q { align-items: flex-start; gap: 1rem; padding: 1.2rem .1rem; font-size: 1.05rem; }
+  .faq-icon { width: 30px; height: 30px; margin-top: 2px; }
+  .faq-a p { padding: 0 .1rem 1.4rem; }
+}
 
 /* ============ CTA FINAL ============ */
 .cta-final {
@@ -833,12 +842,17 @@ html.js .reveal.in { opacity: 1; transform: none; }
 .site-footer .footer-social a { border-radius: 50% !important; }
 #conteudo .local-ic { border-radius: 12px !important; }
 
-/* FAQ: impede o tema de pintar os botões de laranja / formato pílula */
+/* FAQ: impede o tema de pintar os botões de laranja / formato pílula
+   e de capitalizar / cortar o texto (nowrap) */
 #conteudo .faq-q {
   background: transparent !important;
   border: 0 !important; border-radius: 0 !important;
   box-shadow: none !important;
   width: 100% !important;
+  text-transform: none !important;
+  white-space: normal !important;
+  text-align: left !important;
+  overflow-wrap: anywhere;
 }
 #conteudo .faq-item { background: transparent !important; border-radius: 0 !important; }
 #conteudo .faq-q:hover { background: transparent !important; }
