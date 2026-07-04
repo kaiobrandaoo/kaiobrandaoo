@@ -469,6 +469,21 @@ section { padding: clamp(4.5rem, 9vw, 8rem) 0; position: relative; }
 }
 
 /* ============ RESULTADOS / CASES ============ */
+/* bloco de destaque (depoimento em vídeo vertical + texto) */
+.case-feature { display: grid; gap: 1.8rem; align-items: center; margin-bottom: clamp(2.8rem, 6vw, 4.5rem); }
+.case-feature .yt-facade {
+  aspect-ratio: 9 / 16; width: 100%; max-width: 320px;
+  margin-inline: auto; align-self: center;
+}
+.case-feature-body h3 { font-size: clamp(1.5rem, 3vw, 2.1rem); color: #fff; margin: .5rem 0 1rem; }
+.case-feature-body p { color: var(--cream); margin-bottom: .85rem; max-width: 58ch; }
+.case-feature-body p:last-child { margin-bottom: 0; }
+.case-feature-body p strong { color: #fff; }
+@media (min-width: 860px) {
+  .case-feature { grid-template-columns: .72fr 1.28fr; gap: 3rem; margin-bottom: 4.5rem; }
+  .case-feature .yt-facade { max-width: 300px; }
+}
+
 .cases-grid { display: grid; gap: 2.6rem 1.6rem; }
 @media (min-width: 760px) {
   .cases-grid { grid-template-columns: repeat(6, 1fr); }
@@ -1022,6 +1037,20 @@ html.js .reveal.in { opacity: 1; transform: none; }
         <h2>Resultados reais, contados <em>por quem pagou a conta</em></h2>
         <p>Nenhum print montado, nenhum cliente fictício. Depoimentos em vídeo, publicados no canal aberto da Visão Marketing.</p>
       </header>
+
+      <article class="case-feature reveal">
+        <button class="yt-facade" type="button" data-video="gf8KjBBSbAI" data-title="Depoimento em vídeo da Dra. Eduarda sobre tráfego pago para clínica de estética" aria-label="Assistir depoimento em vídeo da Dra. Eduarda">
+          <img src="https://visao.marketing/wp-content/uploads/2026/07/Trafego-Pago-para-Clinica-de-Estetica-de-agenda-vazia-a-7-pacientes-novos-por-dia.jpeg" alt="Depoimento em vídeo da Dra. Eduarda: tráfego pago para clínica de estética, de agenda vazia a pacientes novos todos os dias" width="900" height="1600" loading="lazy" decoding="async">
+          <span class="play-badge"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
+        </button>
+        <div class="case-feature-body">
+          <p class="case-kicker">Tráfego pago para clínica de estética</p>
+          <h3>Clínica de Estética Dra. Eduarda</h3>
+          <p>Toda clínica de estética vive a mesma angústia: depender de indicação e torcer pra agenda encher. A Dra. Eduarda queria atender pacientes novos todos os dias, mas sozinha isso era quase impossível de sustentar.</p>
+          <p>Ela decidiu contratar um gestor de tráfego pago para clínica de estética — e o cenário mudou por completo. Hoje chegam pacientes qualificados todos os dias, gente que realmente quer marcar. O volume de mensagens ficou tão grande que até a recepção sentiu a diferença.</p>
+          <p>Mais atendimentos, mais faturamento e uma agenda que deixou de ser sorte e virou previsível. Não é promessa nossa: é a Dra. Eduarda quem conta. <strong>Dá o play e escuta dela.</strong></p>
+        </div>
+      </article>
 
       <div class="cases-grid">
         <article class="case-lg reveal">
