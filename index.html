@@ -252,7 +252,11 @@ section { padding: clamp(4.5rem, 9vw, 8rem) 0; position: relative; }
   -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--line-dark);
 }
-.nav-inner { height: var(--nav-h); display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.nav-inner {
+  height: var(--nav-h); display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  width: 100%; max-width: none;
+  padding-inline: clamp(1.25rem, 4vw, 3.5rem);
+}
 .brand { display: inline-flex; align-items: center; }
 .brand img { width: auto; height: 50px; }
 @media (max-width: 860px) { .brand img { height: 42px; } }
@@ -907,7 +911,7 @@ html.js .reveal.in { opacity: 1; transform: none; }
 <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
 <header class="site-header" id="topo">
-  <div class="wrap nav-inner">
+  <div class="nav-inner">
     <a class="brand" href="https://visao.marketing/" aria-label="Visão Marketing — página inicial">
       <img src="https://visao.marketing/wp-content/uploads/2024/04/logo-branca-visaomarketing-1024x448.png" alt="Visão Marketing — agência de marketing digital em Valparaíso de Goiás" width="1024" height="448">
     </a>
