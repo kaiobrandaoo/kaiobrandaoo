@@ -1480,6 +1480,17 @@ html.js .reveal.in { opacity: 1; transform: none; }
   "use strict";
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  /* ---- full-width em builders (Elementor/Canvas) ----
+     Move header, rodapé e botão flutuante para o <body>, tirando-os do
+     container do builder que limita a largura / recorta o overflow.
+     Assim eles ocupam a viewport inteira mesmo dentro do Elementor. */
+  try {
+    ["header.site-header", "footer.site-footer", "a.wa-float"].forEach(function (sel) {
+      var el = document.querySelector(sel);
+      if (el && el.parentElement !== document.body) document.body.appendChild(el);
+    });
+  } catch (e) {}
+
   /* ---- menu mobile ---- */
   var header = document.querySelector(".site-header");
   var menuBtn = document.getElementById("menuBtn");
